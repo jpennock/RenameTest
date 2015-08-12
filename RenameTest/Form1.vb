@@ -98,9 +98,9 @@ Public Class Form1
                 For Page = 1 To Reader.NumberOfPages
                     TextPDF += PdfTextExtractor.GetTextFromPage(Reader, Page)
                 Next
-                For r = 0 To ExcelListDGV.Rows.Count - 1
+                For r = 0 To ExcelListDGV.Rows.Count - 2
                     For s = 0 To IndexCheck.Count - 1 'add the searchable strings to this array (by DGV index) then use this array later when searching for items!
-                        MsgBox(IndexCheck(s).ToString & " " & s & " " & r)
+                        'MsgBox(IndexCheck(s).ToString & " " & s & " " & r)
                         Search(s) = ExcelListDGV.Rows(r).Cells(IndexCheck(s)).Value.ToString
                     Next
                     'MsgBox(TextPDF)
