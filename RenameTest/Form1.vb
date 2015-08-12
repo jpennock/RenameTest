@@ -107,7 +107,14 @@ Public Class Form1
                     For ck = 0 To Search.Count - 1
                         'MsgBox(Search(ck).ToString)
                         If TextPDF.Contains(Search(ck)) Then
-                            MsgBox("Success @ " & SearchFile.ToString & " WITH: " & Search(ck).ToString & " ")
+                            'MsgBox("Success @ " & SearchFile.ToString & " WITH: " & Search(ck).ToString & " ")
+                            VINFound = True
+                        End If
+                        If VINFound = True Then
+                            Reader.Close()
+                            My.Computer.FileSystem.RenameFile(SearchFile, ExcelListDGV.Rows(r).Cells(0).Value.ToString.ToUpper & "_" & ExcelListDGV.Rows(r).Cells(2).Value.ToString.ToUpper & "_" & ExcelListDGV.Rows(r).Cells(1).Value.ToString.ToUpper & "(" & i & ")" & ".PDF")
+                            WorkProgressBar.Value += 1
+                            GoTo FOUND
                         End If
                     Next
                 Next
@@ -163,7 +170,7 @@ Public Class Form1
                     '                        GoTo FOUND
                     '                    End If
                     '                Next
-                    'FOUND:
+FOUND:
                 Next
                 STPWatch.Stop()
                 PDFtable.Clear()
