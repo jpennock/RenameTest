@@ -118,58 +118,6 @@ Public Class Form1
                         End If
                     Next
                 Next
-
-                    '                For s = 0 To ExcelListDGV.Rows.Count - 2
-                    '                    TextPDF = ""
-                    '                    SearchVIN = ExcelListDGV.Rows(s).Cells(1).Value.ToString
-                    '                    SearchName = ExcelListDGV.Rows(s).Cells(2).Value.ToString
-                    '                    For Page = 1 To Reader.NumberOfPages
-                    '                        TextPDF += PdfTextExtractor.GetTextFromPage(Reader, Page)
-                    '                    Next
-                    '                    VINFound = TextPDF.Contains(SearchVIN)
-                    '                    If VINFound = False Then
-                    '                        Dim SearchVin5 As String = ""
-                    '                        For SVIN = 0 To SearchVIN.Count - 1
-                    '                            SearchVin5 += SearchVIN(SVIN)
-                    '                        Next
-                    '                        VINFound = TextPDF.Contains(SearchVin5)
-                    '                        If VINFound = False Then
-                    '                            Dim SearchVIN5Top As String = ""
-                    '                            For TVIN = 1 To SearchVIN.Count - 1
-                    '                                SearchVIN5Top += SearchVIN(TVIN)
-                    '                            Next
-                    '                            VINFound = TextPDF.Contains(SearchVIN5Top)
-                    '                            If VINFound = False Then
-                    '                                Dim SearchVin4 As String = ""
-                    '                                For VIN4 = 1 To SearchVIN.Count - 2
-                    '                                    SearchVin4 += SearchVIN(VIN4)
-                    '                                Next
-                    '                                VINFound = TextPDF.Contains(SearchVin4)
-                    '                            End If
-                    '                        End If
-                    '                    End If
-                    '                    NameFound = TextPDF.Contains(SearchName)
-                    '                    If NameFound = False Then
-                    '                        NameFound = TextPDF.Contains(SearchName.ToUpper)
-                    '                        If NameFound = False Then
-                    '                            Dim SearchNameLess As String = ""
-                    '                            For SNAME = 0 To SearchName.Count - 1
-                    '                                SearchNameLess += SearchName(SNAME)
-                    '                            Next
-                    '                            NameFound = TextPDF.Contains(SearchNameLess)
-                    '                        End If
-                    '                    End If
-                    '                    'If VINFound Or NameFound Then
-                    '                    '    MsgBox(VINFound & " <--VIN NAME--> " & NameFound & " " & ExcelListDGV.Rows(s).Cells(2).Value.ToString)
-                    '                    'End If
-
-                    '                    If VINFound And NameFound Then
-                    '                        WorkProgressBar.Value += 1
-                    '                        Reader.Close()
-                    '                        My.Computer.FileSystem.RenameFile(SearchFile, ExcelListDGV.Rows(s).Cells(0).Value.ToString.ToUpper & "_" & ExcelListDGV.Rows(s).Cells(1).Value.ToString.ToUpper & "_" & ExcelListDGV.Rows(s).Cells(2).Value.ToString.ToUpper & ".PDF")
-                    '                        GoTo FOUND
-                    '                    End If
-                    '                Next
 FOUND:
                 Next
                 STPWatch.Stop()
