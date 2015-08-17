@@ -122,7 +122,7 @@ FOUND:
                 Next
                 STPWatch.Stop()
                 PDFtable.Clear()
-                MsgBox(STPWatch.ElapsedMilliseconds)
+            MsgBox("Renamed : " & WorkProgressBar.Value)
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
