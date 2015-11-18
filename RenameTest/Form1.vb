@@ -112,7 +112,7 @@ Public Class Form1
                         End If
                         If VINFound = True Then
                             Reader.Close()
-                            My.Computer.FileSystem.RenameFile(SearchFile, ExcelListDGV.Rows(r).Cells(0).Value.ToString.ToUpper & "_" & ExcelListDGV.Rows(r).Cells(2).Value.ToString.ToUpper & "_" & ExcelListDGV.Rows(r).Cells(1).Value.ToString.ToUpper & "(" & i & ")" & ".PDF")
+                            My.Computer.FileSystem.RenameFile(SearchFile, ExcelListDGV.Rows(r).Cells(0).Value.ToString.ToUpper & "_" & ExcelListDGV.Rows(r).Cells(2).Value.ToString.ToUpper & "_" & ExcelListDGV.Rows(r).Cells(3).Value.ToString.ToUpper & "(" & i & ")" & ".PDF")
                             WorkProgressBar.Value += 1
                             GoTo FOUND
                         End If
